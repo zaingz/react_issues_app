@@ -1,0 +1,26 @@
+.Issues {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.Issues h3 {
+  text-align: center;
+}
+
+.Issues-list {
+  border-radius: 4px;
+  border: 1px solid #eee;
+  width: 60%;
+  margin: 0 auto !important;
+}
+
+.ant-list-item {
+  padding: 12px;
+}
+
+.Issues-query {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}

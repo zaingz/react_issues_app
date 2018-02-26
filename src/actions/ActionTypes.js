@@ -1,0 +1,5 @@
+export const FETCH_USER_REPOS = 'FETCH_USER_REPOS';
+export const SET_USER_NAME = 'SET_USER_NAME';
+export const SET_REPO_NAME = 'SET_REPO_NAME';
+export const FETCH_REPO_ISSUES = 'FETCH_REPO_ISSUES';
+export const RESET_REPO = 'RESET_REPO';

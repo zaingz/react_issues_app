@@ -1,0 +1,34 @@
+{
+  "name": "issue-tracker",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.2.2",
+    "axios": "^0.18.0",
+    "gh-pages": "^1.1.0",
+    "husky": "^0.14.3",
+    "immutable": "^3.8.2",
+    "lint-staged": "^7.0.0",
+    "prettier": "^1.10.2",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-scripts": "1.1.1",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
+    "precommit": "lint-staged",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6",
+    "standard": "^11.0.0"
+  },
+  "homepage": "https://zaingz.github.io/react_issues_app/"
+}
