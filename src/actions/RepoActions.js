@@ -22,6 +22,25 @@ export const fetchIssues = (username, repoName, query) => {
   };
 };
 
+export const fetchCommits = (username, repoName, page = 1) => {
+  return dispatch => {
+    axios
+      .get(`${baseurl}/repos/${username}/${repoName}/commits?page=${page}`)
+      .then(response =>
+        dispatch({
+          type: ActionTypes.FETCH_REPO_COMMITS,
+          payload: response.data
+        })
+      )
+      .catch(error =>
+        dispatch({
+          type: ActionTypes.FETCH_REPO_COMMITS,
+          payload: []
+        })
+      );
+  };
+};
+
 export const setRepoName = (username, repoName) => {
   return dispatch => {
     dispatch({
@@ -29,5 +48,6 @@ export const setRepoName = (username, repoName) => {
       payload: repoName
     });
     dispatch(fetchIssues(username, repoName));
+    dispatch(fetchCommits(username, repoName));
   };
 };

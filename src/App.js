@@ -5,7 +5,7 @@ import './App.css';
 
 import { connect } from 'react-redux';
 import { fetchUserRepos, setUsername } from './actions/UserActions';
-import { setRepoName, fetchIssues } from './actions/RepoActions';
+import { setRepoName, fetchIssues, fetchCommits } from './actions/RepoActions';
 
 function mapStateToProps({ user, repo }) {
   return {
@@ -31,6 +31,10 @@ class App extends Component {
     this.props.dispatch(fetchIssues(username, repo, query));
   };
 
+  fetchNextCommits = (username, repo, page) => {
+    this.props.dispatch(fetchCommits(username, repo, page));
+  };
+
   render() {
     return (
       <div className="App">
@@ -44,6 +48,7 @@ class App extends Component {
         </header>
         <div className="App-intro">
           <RepoTabSection
+            fetchNextCommits={this.fetchNextCommits}
             getFilteredIssues={this.getFilteredIssues}
             repo={this.props.repo}
             username={this.props.user.username}

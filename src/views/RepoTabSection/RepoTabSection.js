@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Issues } from '../Issues';
+import { Commits } from '../Commits';
 
 import { Tabs } from 'antd';
 const TabPane = Tabs.TabPane;
@@ -25,6 +26,17 @@ class RepoSelector extends Component {
           />
         );
         break;
+
+      case '2':
+        content = (
+          <Commits
+            fetchNextCommits={this.props.fetchNextCommits}
+            commits={this.props.repo.commits}
+            repoName={this.props.repo.name}
+            username={this.props.username}
+          />
+        );
+        break;
     }
 
     return (
@@ -33,7 +45,7 @@ class RepoSelector extends Component {
           <TabPane tab="Issues" key="1">
             {content}
           </TabPane>
-          <TabPane tab="Pull Requests" key="2">
+          <TabPane tab="Commits" key="2">
             {content}
           </TabPane>
           <TabPane tab="Reactions" key="3">
